@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
@@ -32,9 +33,14 @@ export default function Navbar() {
       <div className={`${styles.navInner} container`}>
         {/* Logo */}
         <Link href="/" className={styles.logo} aria-label="GT Cars Import - Accueil">
-          <span className={styles.logoGT}>GT</span>
-          <span className={styles.logoCars}>CARS</span>
-          <span className={styles.logoImport}>IMPORT</span>
+          <Image 
+            src="/logo.webp" 
+            alt="GT Cars Import Logo" 
+            width={241} 
+            height={69} 
+            priority 
+            className={styles.logoImage} 
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -57,14 +63,14 @@ export default function Navbar() {
             Faire une demande
           </Link>
           <button
-            className={styles.burger}
+            className={`${styles.burger} ${menuOpen ? styles.open : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
             aria-expanded={menuOpen}
           >
-            <span className={`${styles.burgerLine} ${menuOpen ? styles.open : ""}`} />
-            <span className={`${styles.burgerLine} ${menuOpen ? styles.open : ""}`} />
-            <span className={`${styles.burgerLine} ${menuOpen ? styles.open : ""}`} />
+            <span className={styles.burgerLine} />
+            <span className={styles.burgerLine} />
+            <span className={styles.burgerLine} />
           </button>
         </div>
       </div>
@@ -76,11 +82,16 @@ export default function Navbar() {
             key={link.href}
             href={link.href}
             className={`${styles.mobileLink} ${pathname === link.href ? styles.active : ""}`}
+            onClick={() => setMenuOpen(false)}
           >
             {link.label}
           </Link>
         ))}
-        <Link href="/contact" className={`btn btn-primary ${styles.mobileCta}`}>
+        <Link 
+          href="/contact" 
+          className={`btn btn-primary ${styles.mobileCta}`}
+          onClick={() => setMenuOpen(false)}
+        >
           Faire une demande
         </Link>
       </div>

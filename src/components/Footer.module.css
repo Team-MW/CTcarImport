@@ -230,4 +230,20 @@
     flex-direction: column;
     text-align: center;
   }
+  .footerMain {
+    padding: 3rem 0 2rem;
+  }
+  .ctaBanner {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaInner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .socialRow {
+    flex-wrap: wrap;
+  }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./contact.module.css";
+import JotForm from "@/components/JotForm";
 
 export const metadata: Metadata = {
   title: "Faire une demande | GT Cars Import",
@@ -30,54 +31,10 @@ export default function Contact() {
       <section className="section-light section-pad">
         <div className="container">
           <div className={styles.contactGrid}>
-            {/* Formulaire */}
+            {/* Formulaire JotForm */}
             <div className={styles.formCard}>
               <h2 className={styles.formTitle}>Votre demande personnalisée</h2>
-              <form className={styles.form} noValidate>
-                <div className={styles.formRow}>
-                  <div className="form-group">
-                    <label htmlFor="prenom">Prénom</label>
-                    <input id="prenom" type="text" className={styles.input} placeholder="Votre prénom" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="nom">Nom</label>
-                    <input id="nom" type="text" className={styles.input} placeholder="Votre nom" />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input id="email" type="email" className={styles.input} placeholder="votre@email.com" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="telephone">Téléphone</label>
-                  <input id="telephone" type="tel" className={styles.input} placeholder="+33 6 00 00 00 00" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="marque">Marque / Modèle souhaité</label>
-                  <input id="marque" type="text" className={styles.input} placeholder="Ex: BMW Série 3, Audi A4, Mercedes Classe C…" />
-                </div>
-                <div className={styles.formRow}>
-                  <div className="form-group">
-                    <label htmlFor="budget">Budget max (€)</label>
-                    <input id="budget" type="number" className={styles.input} placeholder="Ex: 30000" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="livraison">Type de livraison</label>
-                    <select id="livraison" className={styles.input}>
-                      <option value="">Sélectionnez…</option>
-                      <option value="frontiere">Pack Frontière (1 490€)</option>
-                      <option value="domicile">Livraison à Domicile (+1€/km)</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="message">Précisions ou critères supplémentaires</label>
-                  <textarea id="message" rows={4} className={styles.input} placeholder="Kilométrage max, motorisation, couleur, options souhaitées…"></textarea>
-                </div>
-                <button type="submit" className="btn btn-primary btn-lg" style={{ width: "100%", justifyContent: "center" }}>
-                  Envoyer ma demande
-                </button>
-              </form>
+              <JotForm />
             </div>
 
             {/* Infos de contact */}

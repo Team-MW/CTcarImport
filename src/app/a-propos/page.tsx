@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import styles from "./a-propos.module.css";
 
 export const metadata: Metadata = {
   title: "À propos | GT Cars Import",
@@ -44,12 +45,7 @@ export default function APropos() {
   return (
     <main>
       {/* ── PAGE HEADER ───────────────────────────── */}
-      <section style={{
-        background: "linear-gradient(135deg, #050505 0%, #1a0000 100%)",
-        paddingTop: "10rem",
-        paddingBottom: "5rem",
-        borderBottom: "1px solid rgba(217,0,0,0.2)",
-      }}>
+      <section className={styles.pageHeader}>
         <div className="container">
           <p className="section-eyebrow">Qui sommes-nous</p>
           <h1 className="section-title">À propos de <span>GT Cars Import</span></h1>
@@ -64,7 +60,7 @@ export default function APropos() {
       {/* ── PRÉSENTATION (BLANC) ─────────────────── */}
       <section className="section-light section-pad">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+          <div className={styles.twoColGrid}>
             <div>
               <p className="section-eyebrow">Notre histoire</p>
               <h2 className="section-title" style={{ color: "#111" }}>Une équipe de <span>passionnés</span></h2>
@@ -79,9 +75,9 @@ export default function APropos() {
                 véhicule</strong> à la <strong>livraison à votre domicile</strong>, en passant par l'expertise
                 physique, la négociation et l'immatriculation.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <div className={styles.avantagesList}>
                 {avantages.map((a) => (
-                  <div key={a} style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#333", fontSize: "0.9rem" }}>
+                  <div key={a} className={styles.avantageItem}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d90000" strokeWidth="2.5">
                       <polyline points="20 6 9 17 4 12"/>
                     </svg>
@@ -92,10 +88,10 @@ export default function APropos() {
             </div>
 
             {/* Valeurs */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div className={styles.valeursList}>
               {valeurs.map((v) => (
-                <div key={v.title} className="card-light" style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-                  <span style={{ fontSize: "2rem", lineHeight: 1 }}>{v.icon}</span>
+                <div key={v.title} className={`card-light ${styles.valeurCard}`}>
+                  <span style={{ fontSize: "2rem", lineHeight: 1, flexShrink: 0 }}>{v.icon}</span>
                   <div>
                     <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, color: "#111", marginBottom: "0.4rem" }}>{v.title}</h3>
                     <p style={{ color: "#666", fontSize: "0.9rem", lineHeight: "1.7" }}>{v.desc}</p>
@@ -110,7 +106,7 @@ export default function APropos() {
       {/* ── ÉQUIPE (NOIR) ─────────────────────────── */}
       <section className="section-dark-2 section-pad">
         <div className="container">
-          <div className="centeredHead" style={{ textAlign: "center", marginBottom: "4rem" }}>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <p className="section-eyebrow">Derrière GT Cars Import</p>
             <h2 className="section-title">Notre <span>Équipe</span></h2>
             <div className="red-line" style={{ margin: "0 auto 1.5rem" }} />
