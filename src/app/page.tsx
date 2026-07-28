@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Counter from "@/components/Counter";
 import styles from "./page.module.css";
 
 const avantages = [
@@ -89,13 +90,15 @@ export default function Home() {
         <div className={styles.heroStats}>
           <div className={`container ${styles.heroStatsInner}`}>
             {[
-              { n: "2020", l: "Année de création" },
-              { n: "137+", l: "Avis Google" },
-              { n: "10j", l: "Délai de livraison" },
-              { n: "25%", l: "D'économies" },
+              { end: 2020, suffix: "", l: "Année de création" },
+              { end: 137, suffix: "+", l: "Avis Google" },
+              { end: 10, suffix: "j", l: "Délai de livraison" },
+              { end: 25, suffix: "%", l: "D'économies" },
             ].map((s) => (
-              <div key={s.n} className={styles.heroStat}>
-                <span className={styles.heroStatNum}>{s.n}</span>
+              <div key={s.l} className={styles.heroStat}>
+                <span className={styles.heroStatNum}>
+                  <Counter end={s.end} suffix={s.suffix} />
+                </span>
                 <span className={styles.heroStatLabel}>{s.l}</span>
               </div>
             ))}

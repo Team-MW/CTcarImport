@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 
 const navLinks = [
@@ -36,10 +37,8 @@ export default function Footer() {
         <div className={`container ${styles.footerGrid}`}>
           {/* Brand Column */}
           <div className={styles.footerBrand}>
-            <Link href="/" className={styles.footerLogo}>
-              <span className={styles.logoRed}>GT</span>
-              <span>CARS</span>
-              <span className={styles.logoSub}>IMPORT</span>
+            <Link href="/" className={styles.footerLogo} style={{ display: 'inline-block' }}>
+              <Image src="/logo.webp" alt="GT Cars Import" width={160} height={45} style={{ objectFit: 'contain' }} />
             </Link>
             <p className={styles.brandTagline}>
               Spécialiste de l'importation de véhicules depuis l'Allemagne depuis 2020.
@@ -122,7 +121,7 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()} GTCARSIMPORT — Tous droits réservés
           </p>
           <p className={styles.credits}>
-            Ce site a été réalisé par <span>Id Skillz</span>
+            Ce site a été réalisé par <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer">micodidact</a>
           </p>
         </div>
       </div>

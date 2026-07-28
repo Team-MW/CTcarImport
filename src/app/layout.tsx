@@ -14,7 +14,27 @@ export const metadata: Metadata = {
   title: "GT Cars Import | Importation de Véhicules Allemands",
   description:
     "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
-  keywords: "import voiture Allemagne, importation véhicule, GT Cars Import, voiture allemande pas chère",
+  keywords: "import voiture Allemagne, importation véhicule, GT Cars Import, voiture allemande pas chère, mandataire auto, mandataire allemagne",
+  icons: {
+    icon: '/logo.webp',
+    apple: '/logo.webp',
+  },
+  openGraph: {
+    title: "GT Cars Import | Importation de Véhicules Allemands",
+    description: "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
+    url: "https://gtcarsimport.com",
+    siteName: "GT Cars Import",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GT Cars Import | Importation de Véhicules Allemands",
+    description: "Spécialiste de l'importation de véhicules allemands depuis 2020.",
+  },
+  alternates: {
+    canonical: "https://gtcarsimport.com",
+  },
 };
 
 export default function RootLayout({
@@ -31,6 +51,29 @@ export default function RootLayout({
         </div>
         <Footer />
         
+        {/* Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutoDealer",
+              "name": "GT Cars Import",
+              "image": "https://gtcarsimport.com/logo.webp",
+              "url": "https://gtcarsimport.com",
+              "telephone": "+33970702675",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Marktgasse 8",
+                "addressLocality": "Bâle",
+                "postalCode": "4051",
+                "addressCountry": "CH"
+              },
+              "description": "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe."
+            })
+          }}
+        />
+
         {/* Sticky Mobile CTA */}
         <div className="mobile-bottom-cta">
           <a 
