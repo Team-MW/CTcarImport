@@ -74,8 +74,8 @@ export default function RootLayout({
           }}
         />
 
-        {/* Sticky Mobile CTA */}
-        <div className="mobile-bottom-cta">
+        {/* Floating WhatsApp CTA */}
+        <div className="floating-whatsapp-cta">
           <a 
             href="https://wa.me/33970702675" 
             className="btn" 

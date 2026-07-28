@@ -428,17 +428,17 @@ textarea.form-control {
 }
 
 /* ============================================================
-   MOBILE BOTTOM CTA (FLOATING)
-============================================================ */
-.mobile-bottom-cta {
-  display: none;
+   FLOATING WHATSAPP CTA
+=========================================================== */
+.floating-whatsapp-cta {
+  display: block;
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 999;
 }
 
-.mobile-bottom-cta .btn {
+.floating-whatsapp-cta .btn {
   border-radius: 50px;
   background-color: #25D366;
   color: #ffffff;
@@ -454,19 +454,12 @@ textarea.form-control {
   text-decoration: none;
 }
 
-.mobile-bottom-cta .btn:hover {
+.floating-whatsapp-cta .btn:hover {
   background-color: #1ebe57;
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
   color: #ffffff;
 }
 
-.mobile-bottom-cta .btn:active {
+.floating-whatsapp-cta .btn:active {
   transform: scale(0.95);
 }
-
-@media (max-width: 900px) {
-  .mobile-bottom-cta {
-    display: block;
-  }
-}
-
