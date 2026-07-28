@@ -15,10 +15,7 @@ export const metadata: Metadata = {
   description:
     "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
   keywords: "import voiture Allemagne, importation véhicule, GT Cars Import, voiture allemande pas chère, mandataire auto, mandataire allemagne",
-  icons: {
-    icon: '/logo.webp',
-    apple: '/logo.webp',
-  },
+
   openGraph: {
     title: "GT Cars Import | Importation de Véhicules Allemands",
     description: "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
