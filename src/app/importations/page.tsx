@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,6 +24,30 @@ const etapes = [
   { num: "05", title: "Achat & Paiement", desc: "Transaction sécurisée. Nous gérons l'achat, les documents et l'immatriculation française." },
   { num: "06", title: "Livraison", desc: "Votre voiture arrive par camion chez vous en moins de 10 jours. Clés en main !" },
 ];
+
+const galleryItems = [
+  {
+    name: "Audi RS3 Berline",
+    img: "/cars/Audi-RS3-BERLINE-1024x768.jpg",
+    desc: "Importation & Livraison clé en main",
+  },
+  {
+    name: "BMW M3 Competition",
+    img: "/cars/Bmw-M3-MALUS-1024x768.jpg",
+    desc: "Recherche sur mesure",
+  },
+  {
+    name: "Dodge Challenger Scat Pack",
+    img: "/cars/Dodge-Challenger-Scat-Pack-MALUS-ALPINE-1024x768.jpg",
+    desc: "Import & Homologation",
+  },
+  {
+    name: "Dodge Charger Scat Pack",
+    img: "/cars/Dodge-Charger-Scat-1024x768.jpg",
+    desc: "Expertise physique sur place",
+  },
+];
+
 
 export default function Importations() {
   return (
@@ -64,6 +89,61 @@ export default function Importations() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Nos Importations Récentes */}
+      <section className="section-dark section-pad" style={{ backgroundColor: "#080808", borderTop: "1px solid rgba(217,0,0,0.15)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <p className="section-eyebrow">Nos dernières livraisons</p>
+            <h2 className="section-title">Véhicules <span>importés</span></h2>
+            <div className="red-line center" />
+          </div>
+          
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "2rem"
+          }}>
+            {galleryItems.map((item, idx) => (
+              <div key={idx} className="gallery-card" style={{
+                position: "relative",
+                borderRadius: "16px",
+                overflow: "hidden",
+                aspectRatio: "4/3",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                cursor: "pointer"
+              }}>
+                <Image 
+                  src={item.img} 
+                  alt={item.name} 
+                  fill 
+                  style={{ objectFit: "cover", transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
+                  className="gallery-img"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 100%)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                  padding: "2rem",
+                  pointerEvents: "none"
+                }}>
+                  <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, color: "#fff", fontSize: "1.6rem", marginBottom: "0.3rem", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>{item.name}</h3>
+                  <p style={{ color: "#d90000", fontSize: "0.95rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px" }}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style dangerouslySetInnerHTML={{__html: `
+          .gallery-card:hover .gallery-img {
+            transform: scale(1.08) !important;
+          }
+        `}} />
       </section>
 
       {/* Processus (Noir) */}

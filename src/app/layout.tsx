@@ -11,6 +11,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gtcarsimport.com"),
   title: "GT Cars Import | Importation de Véhicules Allemands",
   description:
     "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     description: "Spécialiste de l'importation de véhicules allemands depuis 2020.",
   },
   alternates: {
-    canonical: "https://gtcarsimport.com",
+    canonical: "/",
   },
 };
 
